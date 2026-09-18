@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import PlanDeTable from './components/PlanDeTable';
+import CagnotteMariage from './components/CagnotteMariahe';
 
 /* ============================================================================
  * FAIRE-PART DE MARIAGE — style élégant classique (or antique, encre, ivoire)
@@ -721,7 +722,9 @@ export default function FairePartMariage() {
 
           {/* RSVP — cadre vide, à compléter plus tard */}
           <div className="rsvp-placeholder">
-            <span className="rsvp-placeholder-label">RSVP à venir</span>
+            <section className="rsvp-placeholder-label">
+            <CagnotteMariage/>
+            </section>
           </div>
 
           {/* Pied de page */}

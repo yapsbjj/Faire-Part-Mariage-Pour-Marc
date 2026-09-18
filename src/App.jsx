@@ -2,6 +2,7 @@ import { useState } from 'react'
 import './App.css'
 import FairePartMariage from './FairePartMariage.jsx'
 
+
 function App() {
   
 
@@ -9,6 +10,7 @@ function App() {
   return (
     <>
      <FairePartMariage/> 
+
     </>
   )
 }
