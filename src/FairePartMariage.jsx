@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import PlanDeTable from './components/PlanDeTable';
 
 /* ============================================================================
  * FAIRE-PART DE MARIAGE — style élégant classique (or antique, encre, ivoire)
@@ -167,6 +168,7 @@ export default function FairePartMariage() {
   }
 
   return (
+    <>
     <div className="fp-root">
       {/* -- 4.2 Styles ----------------------------------------------------
           Sommaire du CSS :
@@ -590,6 +592,17 @@ export default function FairePartMariage() {
           .countdown { gap: 10px; }
           .cd-unit { min-width: 48px; }
         }
+
+        /* --- l. Section Plan de table : même fond nocturne que le faire-part,
+           en plein écran, pour une transition harmonieuse entre les deux. ---- */
+        .pdt-page {
+          width: 100%;
+          min-height: 100vh;
+          min-height: 100dvh;
+          box-sizing: border-box;
+          display: flex;
+          background: radial-gradient(ellipse at 50% -10%, #3a332c 0%, #201b17 70%);
+        }
       `}</style>
 
       {/* -- 4.3 Rendu JSX --------------------------------------------------- */}
@@ -708,7 +721,7 @@ export default function FairePartMariage() {
 
           {/* RSVP — cadre vide, à compléter plus tard */}
           <div className="rsvp-placeholder">
-            <span className="rsvp-placeholder-label">RSVP — à venir</span>
+            <span className="rsvp-placeholder-label">RSVP à venir</span>
           </div>
 
           {/* Pied de page */}
@@ -722,5 +735,11 @@ export default function FairePartMariage() {
         </div>
       </div>
     </div>
+
+    {/* Plan de table — section indépendante, occupe toute la page */}
+    <section className="pdt-page">
+      <PlanDeTable />
+    </section>
+    </>
   );
 }
